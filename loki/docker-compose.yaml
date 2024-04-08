@@ -14,7 +14,10 @@ services:
     #command: -config.file=/etc/loki/local-config.yaml
     command: -config.file=/opt/loki/loki-config.yaml
     networks:
-      - loki
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
 
   promtail:
     image: grafana/promtail:2.9.4
@@ -25,7 +28,10 @@ services:
     #command: -config.file=/etc/promtail/config.yml
     command: -config.file=/opt/promtail/promtail-config.yml
     networks:
-      - loki
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
 
 #  grafana:
 #    environment:
