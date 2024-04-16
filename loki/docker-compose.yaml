@@ -1,7 +1,7 @@
 version: "2.1"
 
 networks:
-  monitor-net:
+  dockprom-loki_monitor-net:
     external: true
 
 services:
@@ -15,7 +15,7 @@ services:
     #command: -config.file=/etc/loki/local-config.yaml
     command: -config.file=/opt/loki/loki-config.yaml
     networks:
-      - monitor-net
+      - dockprom-loki_monitor-net
     labels:
       org.label-schema.group: "monitoring"
 
@@ -29,7 +29,7 @@ services:
     #command: -config.file=/etc/promtail/config.yml
     command: -config.file=/opt/promtail/promtail-config.yml
     networks:
-      - monitor-net
+      - dockprom-loki_monitor-net
     labels:
       org.label-schema.group: "monitoring"
 
