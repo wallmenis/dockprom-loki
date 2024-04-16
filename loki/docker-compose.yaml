@@ -1,7 +1,8 @@
-version: "3"
+version: "2.1"
 
 networks:
-  loki:
+  monitor-net:
+    external: true
 
 services:
   loki:
@@ -9,8 +10,8 @@ services:
     container_name: loki
     volumes:
       - ./loki-opt:/opt/loki
-    ports:
-      - "3100:3100"
+    expose:
+      - 3100
     #command: -config.file=/etc/loki/local-config.yaml
     command: -config.file=/opt/loki/loki-config.yaml
     networks:
