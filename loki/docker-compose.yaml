@@ -15,7 +15,7 @@ services:
     #command: -config.file=/etc/loki/local-config.yaml
     command: -config.file=/opt/loki/loki-config.yaml
     networks:
-      - dockprom-lokimonitor-net
+      - dockprom-loki_monitor-net
     labels:
       org.label-schema.group: "monitoring"
 
