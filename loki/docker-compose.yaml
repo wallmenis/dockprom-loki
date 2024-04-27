@@ -10,8 +10,8 @@ services:
     container_name: loki
     volumes:
       - ./loki-opt:/opt/loki
-    expose:
-      - 3100
+    ports:
+      - "3100:3100"
     #command: -config.file=/etc/loki/local-config.yaml
     command: -config.file=/opt/loki/loki-config.yaml
     networks:
